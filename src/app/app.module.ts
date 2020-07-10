@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DictionaryPageComponent } from './dictionary-page/dictionary-page.component';
 import { DictionaryDetailComponent } from './dictionary-detail/dictionary-detail.component';
+import {ImageGalleryModule} from './image-gallery/image-gallery.module';
+import {GalleryConfig} from './image-gallery/token';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,12 @@ import { DictionaryDetailComponent } from './dictionary-detail/dictionary-detail
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ImageGalleryModule,
   ],
-  providers: [],
+  providers: [
+    {provide: GalleryConfig, useValue: 2}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
